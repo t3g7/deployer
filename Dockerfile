@@ -1,4 +1,4 @@
-FROM ubuntu:15:04
+FROM ubuntu:15.04
 MAINTAINER Benjamin Fovet @eftov <b.fovet@gmail.com>
 
 RUN apt-get -y update && apt-get install -y \
