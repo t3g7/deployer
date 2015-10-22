@@ -1,4 +1,4 @@
-# Apache Spark cluster deployer
+# Apache Spark cluster deployer [![Build Status](https://travis-ci.org/t3g7/spark-cluster-deploy.svg?branch=master)](https://travis-ci.org/t3g7/spark-cluster-deploy) [![Docker Hub](https://img.shields.io/badge/docker-ready-blue.svg)](https://registry.hub.docker.com/u/t3g7/docker-spark/)
 
 Apache Spark in a Docker container, based on ``` ubuntu:15.04 ```.
 
