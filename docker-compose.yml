@@ -1,4 +1,5 @@
 master:
+  container_name: master
   image: t3g7/docker-spark
   command: /usr/local/spark/bin/spark-class org.apache.spark.deploy.master.Master -h master
   hostname: master
@@ -22,6 +23,7 @@ master:
     - ./conf/master:/conf
 
 slave:
+  container_name: slave
   image: t3g7/docker-spark
   command: /usr/local/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://master:7077
   hostname: slave_1
