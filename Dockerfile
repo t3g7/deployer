@@ -24,4 +24,4 @@ ENV SPARK_VERSION 1.5.1
 ENV SPARK_HOME "/usr/local/spark"
 ENV PATH $PATH:$SPARK_HOME/bin
 
-CMD ["./usr/local/spark/sbin/start-master.sh"]
+CMD ["/usr/local/spark/bin/spark-class", "org.apache.spark.deploy.master.Master"]
