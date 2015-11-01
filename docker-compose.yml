@@ -23,10 +23,9 @@ master:
     - ./conf/master:/conf
 
 slave:
-  container_name: slave
   image: t3g7/docker-spark
   command: /usr/local/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://master:7077
-  hostname: slave_1
+  hostname: slave
   environment:
     SPARK_CONF_DIR: /conf
     SPARK_WORKER_CORES: 2
@@ -43,6 +42,6 @@ slave:
     - 7016
     - 8081
   ports:
-    - 8081:8081
+    - 8081
   volumes:
     - ./conf/slave:/conf
