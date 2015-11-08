@@ -100,11 +100,3 @@ Run ```docker-compose up -d``` and ```docker-compose scale slave=$NUMBER_OF_SPAR
 For example, run the shell:
 
 	docker exec -it master /bin/bash /usr/local/spark/bin/pyspark --master spark://master:7077
-
-## To do
-
-What do we want ? Multi-Host Networking with Swarm and Compose !
-Issue : after deployment, all the containers should exist on the same Swarm node because linked containers are always scheduled on the same host by Docker Compose for now. Docker Swarm is still in development and containers are not able to talk to each other across nodes.
-
-- Solution still experimental: https://github.com/docker/docker/blob/v1.8.3/experimental/compose_swarm_networking.md
-- Coming to 1.9.0: https://github.com/docker/docker/releases/tag/v1.9.0-rc4
