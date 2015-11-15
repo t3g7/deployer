@@ -93,7 +93,7 @@ The cluster configuration should be visible by running:
 
 ## Deploy the containers
 
-Run ```docker-compose up -d``` and ```docker-compose scale slave=$NUMBER_OF_SPARK_WORKERS``` to deploy the containers and scale them.
+Run ```docker-compose --x-networking up -d``` and ```docker-compose scale slave=$NUMBER_OF_SPARK_WORKERS``` to deploy the containers and scale them.
 
 ## Use Spark
 
