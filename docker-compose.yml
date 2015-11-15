@@ -4,7 +4,8 @@ master:
   command: /usr/local/spark/bin/spark-class org.apache.spark.deploy.master.Master -h master
   hostname: master
   environment:
-    SPARK_CONF_DIR: /conf
+    - "constraint:node==swarm-master"
+    - "SPARK_CONF_DIR: /conf"
   expose:
     - 7001
     - 7002
@@ -27,11 +28,12 @@ slave:
   command: /usr/local/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://master:7077
   hostname: slave
   environment:
-    SPARK_CONF_DIR: /conf
-    SPARK_WORKER_CORES: 2
-    SPARK_WORKER_MEMORY: 2g
-    SPARK_WORKER_PORT: 8881
-    SPARK_WORKER_WEBUI_PORT: 8081
+    - "constraint:node==swarm-node-01"
+    - "SPARK_CONF_DIR: /conf"
+    - "SPARK_WORKER_CORES: 2"
+    - "SPARK_WORKER_MEMORY: 2g"
+    - "SPARK_WORKER_PORT: 8881"
+    - "SPARK_WORKER_WEBUI_PORT: 8081"
   links:
     - master
   expose:
