@@ -2,11 +2,21 @@ sudo: required
 services:
   - docker
 
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install docker-engine
+  - docker -v
+  - sudo rm /usr/local/bin/docker-compose
+  - curl -L https://github.com/docker/compose/releases/download/1.5.2/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
+
 install:
   - docker build -t t3g7/docker-spark .
+  - docker-compose up -d
 
 script:
-  - docker run -it t3g7/docker-spark /bin/bash /usr/local/spark/bin/run-example SparkPi 10
+  - docker exec -it master /bin/bash /usr/local/spark/bin/run-example SparkPi 10 --master spark://master:7077
 
 after_success:
   - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
