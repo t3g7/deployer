@@ -26,7 +26,13 @@ The cluster configuration should be visible by running:
 
 ### With Docker Compose
 
-Run `docker-compose --x-networking --x-network-driver=overlay up -d` and `docker-compose scale slave=$NUMBER_OF_SPARK_WORKERS` to deploy the containers and scale them.
+Deploy the containers on constrained nodes with:
+
+	docker-compose --x-networking --x-network-driver=overlay up -d 
+	
+Use the `scale` option to add more Spark workers:
+
+	docker-compose scale slave=$NUMBER_OF_SPARK_WORKERS
 
 ### Without Compose (to be tested)
 
@@ -46,5 +52,5 @@ For example, run the shell:
 
 ## References
 
-Multi-host networking: https://docs.docker.com/engine/userguide/networking/get-started-overlay/
-Networking in Compose: https://docs.docker.com/compose/networking/
+- Multi-host networking: https://docs.docker.com/engine/userguide/networking/get-started-overlay/
+- Networking in Compose: https://docs.docker.com/compose/networking/
