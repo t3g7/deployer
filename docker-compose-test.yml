@@ -1,0 +1,96 @@
+spark-master:
+  container_name: master
+  image: t3g7/docker-spark
+  command: /usr/local/spark/bin/spark-class org.apache.spark.deploy.master.Master -h master
+  hostname: master
+  environment:
+    - "constraint:node==swarm-master"
+    - "SPARK_CONF_DIR: /conf"
+  expose:
+    - 7001
+    - 7002
+    - 7003
+    - 7004
+    - 7005
+    - 7006
+    - 7077
+    - 6066
+  ports:
+    - 4040:4040
+    - 6066:6066
+    - 7077:7077
+    - 8080:8080
+  volumes:
+    - ./conf/master:/conf
+
+spark-slave1:
+  container_name: slave1
+  image: t3g7/docker-spark
+  command: /usr/local/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://master:7077
+  hostname: slave1
+  environment:
+    - "constraint:node==swarm-node-1"
+    - "SPARK_CONF_DIR: /conf"
+    - "SPARK_WORKER_CORES: 2"
+    - "SPARK_WORKER_MEMORY: 2g"
+    - "SPARK_WORKER_PORT: 8881"
+    - "SPARK_WORKER_WEBUI_PORT: 8081"
+  expose:
+    - 7012
+    - 7013
+    - 7014
+    - 7015
+    - 7016
+    - 8081
+  ports:
+    - 8081
+  volumes:
+    - ./conf/slave:/conf
+
+spark-slave2:
+  container_name: slave2
+  image: t3g7/docker-spark
+  command: /usr/local/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://master:7077
+  hostname: slave2
+  environment:
+    - "constraint:node==swarm-node-2"
+    - "SPARK_CONF_DIR: /conf"
+    - "SPARK_WORKER_CORES: 2"
+    - "SPARK_WORKER_MEMORY: 2g"
+    - "SPARK_WORKER_PORT: 8881"
+    - "SPARK_WORKER_WEBUI_PORT: 8081"
+  expose:
+    - 7012
+    - 7013
+    - 7014
+    - 7015
+    - 7016
+    - 8081
+  ports:
+    - 8081
+  volumes:
+    - ./conf/slave:/conf
+
+spark-slave3:
+  container_name: slave3
+  image: t3g7/docker-spark
+  command: /usr/local/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://master:7077
+  hostname: slave3
+  environment:
+    - "constraint:node==swarm-node-3"
+    - "SPARK_CONF_DIR: /conf"
+    - "SPARK_WORKER_CORES: 2"
+    - "SPARK_WORKER_MEMORY: 2g"
+    - "SPARK_WORKER_PORT: 8881"
+    - "SPARK_WORKER_WEBUI_PORT: 8081"
+  expose:
+    - 7012
+    - 7013
+    - 7014
+    - 7015
+    - 7016
+    - 8081
+  ports:
+    - 8081
+  volumes:
+    - ./conf/slave:/conf
