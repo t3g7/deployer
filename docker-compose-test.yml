@@ -43,7 +43,7 @@ spark-slave1:
     - 7016
     - 8081
   ports:
-    - 8081:8081
+    - 8081
   volumes:
     - ./conf/slave:/conf
 
@@ -67,7 +67,7 @@ spark-slave2:
     - 7016
     - 8081
   ports:
-    - 8081:8081
+    - 8081
   volumes:
     - ./conf/slave:/conf
 
@@ -91,6 +91,6 @@ spark-slave3:
     - 7016
     - 8081
   ports:
-    - 8081:8081
+    - 8081
   volumes:
     - ./conf/slave:/conf
