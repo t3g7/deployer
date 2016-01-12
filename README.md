@@ -1,12 +1,14 @@
 # Spark cluster deployer [![Build Status](https://travis-ci.org/t3g7/spark-cluster-deploy.svg?branch=master)](https://travis-ci.org/t3g7/spark-cluster-deploy) [![Docker Hub](https://img.shields.io/badge/docker-ready-blue.svg)](https://registry.hub.docker.com/u/t3g7/docker-spark/)
 
-Apache Spark image in a Docker container, based on `ubuntu:15.04`. Cluster deployed with Docker Compose and orchestrated with Docker Swarm.
+Apache Spark image in a Docker container, based on `java:8`. Cluster deployed with Docker Compose and orchestrated with Docker Swarm.
 
 Heavily inspired by [gettyimages/docker-spark](https://github.com/gettyimages/docker-spark).
 
+Official image for [Cassandra](https://hub.docker.com/_/cassandra/) is used and installed on the same nodes as Spark slaves.
+
 ### Run the cluster locally on VirtualBox
 
-In `scripts`, run :
+In `scripts/`, run :
 
 	./bootstrap.sh
 
