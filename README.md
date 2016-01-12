@@ -30,7 +30,8 @@ Deploy the containers on constrained nodes with:
 
 ## Deploy Cassandra
 
-In `scripts/` Run:
+This script takes around 20 minutes to finish.
+In `scripts/`, run:
 
 	./deploy_cassandra.sh
 
