@@ -1,8 +1,8 @@
-# Spark cluster deployer [![Build Status](https://travis-ci.org/t3g7/spark-cluster-deploy.svg?branch=master)](https://travis-ci.org/t3g7/spark-cluster-deploy) [![Docker Hub](https://img.shields.io/badge/docker-ready-blue.svg)](https://registry.hub.docker.com/u/t3g7/docker-spark/)
+# Spark Cassandra cluster deployment scripts
 
-Apache Spark image in a Docker container, based on `java:8`. Cluster deployed with Docker Compose and orchestrated with Docker Swarm.
+[![Build Status](https://travis-ci.org/t3g7/spark-cluster-deploy.svg?branch=master)](https://travis-ci.org/t3g7/spark-cluster-deploy) [![Docker Hub](https://img.shields.io/badge/docker-ready-blue.svg)](https://registry.hub.docker.com/u/t3g7/docker-spark/)
 
-Heavily inspired by [gettyimages/docker-spark](https://github.com/gettyimages/docker-spark).
+Apache Spark in a Docker container, based on `java:8`. Heavily inspired by [gettyimages/docker-spark](https://github.com/gettyimages/docker-spark). Cluster deployed with Docker Compose and orchestrated with Docker Swarm.
 
 Official image for [Cassandra](https://hub.docker.com/_/cassandra/) is used and installed on the same nodes as Spark slaves.
 
