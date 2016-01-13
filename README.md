@@ -1,6 +1,6 @@
 # Spark Cassandra cluster deployment scripts
 
-[![Build Status](https://travis-ci.org/t3g7/spark-cluster-deploy.svg?branch=master)](https://travis-ci.org/t3g7/spark-cluster-deploy) [![Docker Hub](https://img.shields.io/badge/docker-ready-blue.svg)](https://registry.hub.docker.com/u/t3g7/docker-spark/)
+[![Build Status](https://travis-ci.org/t3g7/deployer.svg?branch=master)](https://travis-ci.org/t3g7/deployer) [![Docker Hub](https://img.shields.io/badge/docker-ready-blue.svg)](https://registry.hub.docker.com/u/t3g7/docker-spark/)
 
 Apache Spark in a Docker container, based on `java:8`. Heavily inspired by [gettyimages/docker-spark](https://github.com/gettyimages/docker-spark). Cluster deployed with Docker Compose and orchestrated with Docker Swarm.
 
