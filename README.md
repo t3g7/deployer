@@ -32,10 +32,13 @@ Deploy the containers on constrained nodes with:
 
 ## Deploy Cassandra
 
-This script takes around 20 minutes to finish.
 In `scripts/`, run:
 
 	./deploy_cassandra.sh
+	
+After deployment is complete, you can run `cqlsh` this way:
+
+    docker run -it --rm --net container:cass1 cassandra:2.2.4 cqlsh
 
 ## References
 
