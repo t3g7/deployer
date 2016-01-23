@@ -7,6 +7,7 @@ docker run --name cass1 -d \
   -e CASSANDRA_RPC_ADDRESS=0.0.0.0 \
   -e CASSANDRA_START_RPC=true \
   -e "constraint:node==swarm-node-1" \
+  -v /data:/var/lib/cassandra
   -p 7000:7000 \
   -p 9042:9042 \
   cassandra:2.2.4
@@ -19,6 +20,7 @@ docker run --name cass2 -d \
   -e CASSANDRA_START_RPC=true \
   -e CASSANDRA_SEEDS=$(docker-machine ip swarm-node-1) \
   -e "constraint:node==swarm-node-2" \
+  -v /data:/var/lib/cassandra
   -p 7000:7000 \
   -p 9042:9042 \
   cassandra:2.2.4
@@ -31,6 +33,7 @@ docker run --name cass3 -d \
   -e CASSANDRA_START_RPC=true \
   -e CASSANDRA_SEEDS=$(docker-machine ip swarm-node-1) \
   -e "constraint:node==swarm-node-3" \
+  -v /data:/var/lib/cassandra
   -p 7000:7000 \
   -p 9042:9042 \
   cassandra:2.2.4

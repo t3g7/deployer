@@ -39,6 +39,8 @@ In `scripts/`, run:
 After deployment is complete, you can run `cqlsh` this way:
 
     docker run -it --rm --net container:cass1 cassandra:2.2.4 cqlsh
+    
+A folder `/data` is mounted as a shared volume outside of the container to save Cassandra data.  
 
 ## References
 
