@@ -3,6 +3,8 @@
 # Create the swarm master
 docker-machine create \
   -d virtualbox \
+  --virtualbox-memory "2048" \
+  --virtualbox-cpu-count "2" \
   --swarm --swarm-image="swarm" --swarm-master \
   --swarm-discovery="consul://$(docker-machine ip mh-keystore):8500" \
   --engine-opt="cluster-store=consul://$(docker-machine ip mh-keystore):8500" \
@@ -14,6 +16,8 @@ for i in {1..3}
 do
   docker-machine create \
     -d virtualbox \
+    --virtualbox-memory "2048" \
+    --virtualbox-cpu-count "2" \
     --swarm --swarm-image="swarm:latest" \
     --swarm-discovery="consul://$(docker-machine ip mh-keystore):8500" \
     --engine-opt="cluster-store=consul://$(docker-machine ip mh-keystore):8500" \
