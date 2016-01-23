@@ -22,6 +22,7 @@ spark-master:
     - 8080:8080
   volumes:
     - ./conf/master:/conf
+    - ./data:/usr/local/spark/data
 
 spark-slave1:
   container_name: slave1
@@ -46,6 +47,7 @@ spark-slave1:
     - 8081:8081
   volumes:
     - ./conf/slave:/conf
+    - ./data:/usr/local/spark/data
 
 spark-slave2:
   container_name: slave2
@@ -70,6 +72,7 @@ spark-slave2:
     - 8081:8081
   volumes:
     - ./conf/slave:/conf
+    - ./data:/usr/local/spark/data
 
 spark-slave3:
   container_name: slave3
@@ -94,3 +97,4 @@ spark-slave3:
     - 8081:8081
   volumes:
     - ./conf/slave:/conf
+    - ./data:/usr/local/spark/data
